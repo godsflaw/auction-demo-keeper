@@ -144,8 +144,7 @@ export default class Clipper {
           _profitAddr,
           _gemJoinAdapter,
           _minProfit,
-          Config.vars.collateral[this._collateralName].uniswapRoute,
-          [] // placeholder array
+          Config.vars.collateral[this._collateralName].uniswapRoute
         ]);
       }
     } else if (exchangeCalleeAddress === Config.vars.collateral[this._collateralName].oasisCallee) {
