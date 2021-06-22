@@ -145,14 +145,14 @@ export default class keeper {
 
         const auctionSummary = `\n
           ${collateral.name} auction ${auction.id}
-    
+
             Auction Tab:        ${ethers.utils.formatUnits(auction.tab.div(decimals27))} Dai
             Auction Lot:        ${ethers.utils.formatUnits(auction.lot.toString())}
             Configured Lot:     between ${ethers.utils.formatUnits(minLot)} and ${ethers.utils.formatUnits(maxLot)}
             Debt to Cover:      ${ethers.utils.formatUnits(owe27.div(decimals9))} Dai
             Slice to Take:      ${ethers.utils.formatUnits(lot)}
             Auction Price:      ${ethers.utils.formatUnits(auction.price.div(decimals9))} Dai
-    
+
             costOfLot:          ${ethers.utils.formatUnits(costOfLot)} Dai
             minProfit:          ${ethers.utils.formatUnits(minProfit)} Dai
             profitAddr:         ${this._wallet.address}\n`;
@@ -172,7 +172,7 @@ export default class keeper {
 
         } else if (oasis) {
           liquidityAvailability = `
-            Gem price with profit: ${ethers.utils.formatUnits(priceWithProfit.div(decimals9))}         
+            Gem price with profit: ${ethers.utils.formatUnits(priceWithProfit.div(decimals9))}
             OasisDEXAvailability:  amt of collateral avl to buy ${ethers.utils.formatUnits(oasisDexAvailability)}\n`;
           console.log(auctionSummary + liquidityAvailability);
           //OasisDEX buys gem only with gem price + minProfit%

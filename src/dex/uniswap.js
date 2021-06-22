@@ -53,6 +53,9 @@ export default class UniswapAdaptor {
         let ilkAmount0 = BigNumber.from('10').pow(24); // 1 million
         let ilkAmount1 = BigNumber.from('10').pow(24); // 1 million
 
+        let offer0 = [ilkAmount0];
+        let offer1 = [ilkAmount1];
+
         if (Config.vars.collateral[this._collateralName].token0.name !== 'DAI') {
           offer0 = await this._uniswap.getAmountsOut(
             ilkAmount0,
